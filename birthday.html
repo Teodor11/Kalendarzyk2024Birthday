@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalendarzyk 2024 – urodziny</title>
+    <link rel="icon" href="./favicon.ico" />
+    <style>
+        body {
+            background-color: #96d4ff;
+            font-family: "Open Sans", Arial, Helvetica, sans-serif;
+            margin: 1em;
+        }
+
+        #data_container {
+            align-items: center;
+            display: grid;
+            grid-template-columns: 10em 20em 8em;
+        }
+
+        textarea,
+        button {
+            font-family: "Open Sans", Arial, Helvetica, sans-serif;
+            font-size: 1em;
+            resize: none;
+        }
+
+        ol li:nth-child(2n) {
+            background-color: #96f4ff;
+        }
+
+        #data_ol {
+            text-align: right;
+        }
+
+        #data_ol>li {
+            padding-right: 0.5em;
+        }
+
+        #data_ol2 {
+            list-style-position: inside;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .highlight {
+            background-color: yellowgreen;
+        }
+
+        #result_message {
+            background-color: yellow;
+        }
+
+        #main_container {
+            display: grid;
+            grid-template-columns: 60% 40%;
+        }
+
+        #result_container {
+            display: flex;
+        }
+
+        table {
+            border-right: 2px solid black;
+            height: max-content;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Kalendarzyk 2024 – urodziny</h1>
+
+    <h3>Instrukcja</h3>
+    <p>
+    <ul>
+        <li>Wpisz swój login i kod dostępu.</li>
+        <li>Wprowadź urodziny do Kalendarzyka 2024 w odpowiednie wiersze pola tekstowego.</li>
+        <li>Nie dodawaj ani nie usuwaj żadnych nowych linii.</li>
+        <li>Kiedy wszystko zostanie wpisane, kliknij "Sprawdź" i upewnij się, że wszystkie dane w tabelce po prawej
+            wyświetlają się poprawnie.</li>
+        <li>Zwróć uwagę, czy dopasowanie dat jest poprawne (np. czy nic się przez przypadek nie przesunęło).</li>
+        <li>W razie potrzeby popraw dane i kliknij "Sprawdź" ponownie.</li>
+        <li>Jeśli wszystkie dane po sprawdzeniu będą poprawne, kliknij "Zapisz", aby zapisać do bazy danych.</li>
+    </ul>
+    </p>
+
+    <label>
+        Login: <input type="text" name="login" id="login" maxlength="3" />
+    </label>
+    <label>
+        Kod dostępu: <input type="text" name="accessKey" id="accessKey" maxlength="16" />
+    </label><br /><br />
+
+
+    <button id="check">Sprawdź &raquo;</button>
+    <button id="save">Zapisz &raquo;</button>
+    <span id="result_message"></span>
+
+    <div id="main_container">
+        <div id="data_container">
+            <ol id="data_ol"></ol>
+            <textarea name="data" id="data_textarea" cols="30" rows="366"></textarea>
+            <ol id="data_ol2"></ol>
+        </div>
+
+        <div id="result_container"> </div>
+    </div>
+
+
+    <script src="birthday_script.js"></script>
+</body>
+
+</html>
