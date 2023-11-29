@@ -56,7 +56,9 @@ function check(): void
 
     for (let i = 0; i < 366; i++)
     {
-        code += `<tr>
+        const highlight = (d.getDate() == 1) ? "highlight" : "";
+
+        code += `<tr class='${highlight}'>
         <td>${i + 1}</td>
         <td>${d.toLocaleDateString()}</td>
         <td>${formatText(list[i]) || ""}</td>
@@ -101,7 +103,7 @@ function save(): void
         else
         {
             setResultMessage("Niepoprawny login lub kod dostępu.");
-            throw new Error(response.status + " / " + response.body);
+            throw new Error(response.status + " / " + response.statusText);
         }
     }));
 }

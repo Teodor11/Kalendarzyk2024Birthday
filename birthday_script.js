@@ -72,7 +72,8 @@ function check() {
     var code = "";
     code = "<table>";
     for (var i = 0; i < 366; i++) {
-        code += "<tr>\n        <td>".concat(i + 1, "</td>\n        <td>").concat(d.toLocaleDateString(), "</td>\n        <td>").concat(formatText(list[i]) || "", "</td>\n        </tr>");
+        var highlight = (d.getDate() == 1) ? "highlight" : "";
+        code += "<tr class='".concat(highlight, "'>\n        <td>").concat(i + 1, "</td>\n        <td>").concat(d.toLocaleDateString(), "</td>\n        <td>").concat(formatText(list[i]) || "", "</td>\n        </tr>");
         if (i == 181) {
             code += "</table><table>";
         }
@@ -101,7 +102,7 @@ function save() {
             }
             else {
                 setResultMessage("Niepoprawny login lub kod dostępu.");
-                throw new Error(response.status + " / " + response.body);
+                throw new Error(response.status + " / " + response.statusText);
             }
             return [2 /*return*/];
         });

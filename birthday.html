@@ -8,7 +8,7 @@
     <link rel="icon" href="./favicon.ico" />
     <style>
         body {
-            background-color: #96d4ff;
+            background-color: #e5d0ff;
             font-family: "Open Sans", Arial, Helvetica, sans-serif;
             margin: 1em;
         }
@@ -26,8 +26,9 @@
             resize: none;
         }
 
-        ol li:nth-child(2n) {
-            background-color: #96f4ff;
+        ol li:nth-child(2n),
+        tr:nth-child(2n) {
+            background-color: #CCA3FF;
         }
 
         #data_ol {
@@ -45,7 +46,7 @@
         }
 
         .highlight {
-            background-color: yellowgreen;
+            background-color: limegreen !important;
         }
 
         #result_message {
@@ -63,7 +64,16 @@
 
         table {
             border-right: 2px solid black;
+            border-collapse: collapse;
             height: max-content;
+        }
+
+        td {
+            padding: 0 0.25em;
+        }
+
+        td:nth-child(3) {
+            min-width: 8em;
         }
     </style>
 </head>
