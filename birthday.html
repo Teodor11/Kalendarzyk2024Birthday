@@ -27,7 +27,7 @@
         }
 
         ol li:nth-child(2n),
-        tr:nth-child(2n) {
+        table:not(#auth_data) tr:nth-child(2n) {
             background-color: #CCA3FF;
         }
 
@@ -62,7 +62,7 @@
             display: flex;
         }
 
-        table {
+        table:not(#auth_data) {
             border-right: 2px solid black;
             border-collapse: collapse;
             height: max-content;
@@ -84,7 +84,9 @@
     <h3>Instrukcja</h3>
     <p>
     <ul>
-        <li>Wpisz swój login i kod dostępu.</li>
+        <li>Wpisz swój login (3 cyfry) i kod dostępu (16 cyfr).</li>
+        <li><i>(opcjonalnie)</i> Wpisz hasło do zaszyfrowania danych. Zapamiętaj je, żeby później można było odczytać
+            dane w kalendarzyku [!]</li>
         <li>Wprowadź urodziny do Kalendarzyka 2024 w odpowiednie wiersze pola tekstowego.</li>
         <li>Nie dodawaj ani nie usuwaj żadnych nowych linii.</li>
         <li>Kiedy wszystko zostanie wpisane, kliknij "Sprawdź" i upewnij się, że wszystkie dane w tabelce po prawej
@@ -95,13 +97,20 @@
     </ul>
     </p>
 
-    <label>
-        Login: <input type="text" name="login" id="login" maxlength="3" />
-    </label>
-    <label>
-        Kod dostępu: <input type="text" name="accessKey" id="accessKey" maxlength="16" />
-    </label><br /><br />
-
+    <table id="auth_data">
+        <tr>
+            <td><label for="login">Login:</label></td>
+            <td><input type="text" name="login" id="login" maxlength="3" /></td>
+        </tr>
+        <tr>
+            <td><label for="accessKey">Kod dostępu:</label></td>
+            <td><input type="text" name="accessKey" id="accessKey" maxlength="16" /></td>
+        </tr>
+        <tr>
+            <td><label for="encryptionKey">Hasło (opcjonalnie):</label></td>
+            <td><input type="password" name="encryptionKey" id="encryptionKey" maxlength="32" /></td>
+        </tr>
+    </table><br />
 
     <button id="check">Sprawdź &raquo;</button>
     <button id="save">Zapisz &raquo;</button>

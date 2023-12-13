@@ -3,7 +3,6 @@
 
 const textarea = document.getElementById("data_textarea")! as HTMLTextAreaElement;
 
-
 function main(): void
 {
     const ol = document.getElementById("data_ol");
@@ -38,7 +37,6 @@ function main(): void
     document.getElementById("save")?.addEventListener("click", save);
 }
 
-
 function getList(): Array<string>
 {
     const list: Array<string> = textarea.value!.split(/\n/gm)!.slice(0, 366);
@@ -49,7 +47,6 @@ function check(): void
 {
     const list: Array<string> = getList();
     let d = new Date(2024, 0, 1, 12);
-
 
     let code: string = "";
     code = "<table>";
@@ -88,8 +85,9 @@ function save(): void
 
     const login = (document.getElementById("login") as HTMLInputElement).value;
     const accessKey = (document.getElementById("accessKey") as HTMLInputElement).value;
+    const encryptionKey = (document.getElementById("encryptionKey") as HTMLInputElement).value;
 
-    const request = { login, accessKey, birthdayList } as { login: string, accessKey: string, birthdayList?: string };
+    const request = { login, accessKey, encryptionKey, birthdayList }; //as { login: string, accessKey: string, birthdayList?: string };
 
     fetch("https://europe-west3-kalendarzyk2024.cloudfunctions.net/saveBirthdayToCalendar", {
         method: "POST",
@@ -132,12 +130,5 @@ function formatText(text_in: string): string
 
     return t;
 }
-
-
-
-
-
-
-
 
 main();

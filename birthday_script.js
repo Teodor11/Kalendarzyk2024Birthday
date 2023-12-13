@@ -91,7 +91,8 @@ function save() {
     var birthdayList = JSON.stringify(list);
     var login = document.getElementById("login").value;
     var accessKey = document.getElementById("accessKey").value;
-    var request = { login: login, accessKey: accessKey, birthdayList: birthdayList };
+    var encryptionKey = document.getElementById("encryptionKey").value;
+    var request = { login: login, accessKey: accessKey, encryptionKey: encryptionKey, birthdayList: birthdayList }; //as { login: string, accessKey: string, birthdayList?: string };
     fetch("https://europe-west3-kalendarzyk2024.cloudfunctions.net/saveBirthdayToCalendar", {
         method: "POST",
         body: JSON.stringify(request)
