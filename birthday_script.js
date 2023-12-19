@@ -101,6 +101,9 @@ function save() {
             if (response.ok) {
                 setResultMessage("Zapisano pomyślnie :)");
             }
+            else if (response.status == 400) {
+                setResultMessage("Lista urodzin dla podanych danych logowania została już zapisana.");
+            }
             else {
                 setResultMessage("Niepoprawny login lub kod dostępu.");
                 throw new Error(response.status + " / " + response.statusText);

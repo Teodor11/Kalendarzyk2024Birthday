@@ -98,6 +98,10 @@ function save(): void
         {
             setResultMessage("Zapisano pomyślnie :)");
         }
+        else if (response.status == 400)
+        {
+            setResultMessage("Lista urodzin dla podanych danych logowania została już zapisana.")
+        }
         else
         {
             setResultMessage("Niepoprawny login lub kod dostępu.");
