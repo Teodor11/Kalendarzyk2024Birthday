@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalendarzyk 2024 – urodziny</title>
+    <title>Kalendarzyk 2024 &ndash; urodziny</title>
     <link rel="icon" href="./favicon.ico" />
     <style>
         body {
@@ -80,12 +80,14 @@
 </head>
 
 <body>
-    <h1>Kalendarzyk 2024 – urodziny</h1>
+    <h1>Kalendarzyk 2024 &ndash; urodziny</h1>
 
     <h3>Instrukcja</h3>
     <p>
     <ul>
         <li>Wpisz swój login (3 cyfry) i kod dostępu (16 cyfr).</li>
+        <li>Wpisz nazwę użytkownika &ndash; osobę, dla której jest przeznaczony kalendarzyk (ta nazwa będzie wyświetlana
+            po zalogowaniu)</li>
         <li><i>(opcjonalnie)</i> Wpisz hasło do zaszyfrowania danych. Zapamiętaj je, żeby później można było odczytać
             dane w kalendarzyku [!]</li>
         <li>Wprowadź urodziny do Kalendarzyka 2024 w odpowiednie wiersze pola tekstowego.</li>
@@ -106,6 +108,10 @@
         <tr>
             <td><label for="accessKey">Kod dostępu:</label></td>
             <td><input type="text" name="accessKey" id="accessKey" maxlength="16" /></td>
+        </tr>
+        <tr>
+            <td><label for="encryptionKey">Nazwa użytkownika:</label></td>
+            <td><input type="text" name="username" id="username" maxlength="64" /></td>
         </tr>
         <tr>
             <td><label for="encryptionKey">Hasło (opcjonalnie):</label></td>

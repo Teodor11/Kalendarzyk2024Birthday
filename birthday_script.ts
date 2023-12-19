@@ -86,8 +86,9 @@ function save(): void
     const login = (document.getElementById("login") as HTMLInputElement).value;
     const accessKey = (document.getElementById("accessKey") as HTMLInputElement).value;
     const encryptionKey = (document.getElementById("encryptionKey") as HTMLInputElement).value;
+    const username = (document.getElementById("username") as HTMLInputElement).value;
 
-    const request = { login, accessKey, encryptionKey, birthdayList }; //as { login: string, accessKey: string, birthdayList?: string };
+    const request = { login, accessKey, encryptionKey, birthdayList, username }; //as { login: string, accessKey: string, birthdayList?: string };
 
     fetch("https://europe-west3-kalendarzyk2024.cloudfunctions.net/saveBirthdayToCalendar", {
         method: "POST",
